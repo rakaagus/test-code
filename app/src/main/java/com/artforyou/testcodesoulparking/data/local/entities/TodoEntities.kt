@@ -2,6 +2,7 @@ package com.artforyou.testcodesoulparking.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.artforyou.testcodesoulparking.utils.PriorityTodo
 
 @Entity(tableName = "todos_table")
 data class TodoEntities(
@@ -14,5 +15,7 @@ data class TodoEntities(
 
     val date: String,
 
-    val isTrash: Boolean
+    val isTrash: Boolean,
+
+    val priority: PriorityTodo
 )
