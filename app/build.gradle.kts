@@ -53,13 +53,14 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     /*Hilt Dagger*/
-    implementation(libs.hilt.android)
-    implementation(libs.androidx.hilt.navigation.compose)
-    ksp(libs.hilt.android.compiler)
-    ksp(libs.androidx.hilt.compiler)
+    implementation(libs.hilt.andorid)
+    ksp(libs.hilt.android.compailer)
 
     /*Room*/
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    /*Lottie*/
+    implementation(libs.lottie.animation)
 }

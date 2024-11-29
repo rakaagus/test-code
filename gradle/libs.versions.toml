@@ -1,7 +1,7 @@
 [versions]
 agp = "8.5.1"
 kotlin = "1.9.0"
-coreKtx = "1.15.0"
+coreKtx = "1.13.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -11,8 +11,8 @@ activity = "1.9.3"
 constraintlayout = "2.2.0"
 kpsVersion = "1.9.10-1.0.13"
 hiltAndroid = "2.49"
-hiltCompiler = "1.2.0"
-roomRuntime = "2.6.1"
+roomRuntime = "2.5.2"
+lottieAnimation = "4.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,15 +25,16 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 # Hilt Dagger
-androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
-androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "hiltCompiler" }
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+hilt-andorid = {module = "com.google.dagger:hilt-android", version.ref="hiltAndroid"}
+hilt-android-compailer = {module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid"}
 
 # Room
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+
+# Lotte
+lottie-animation = { module = "com.airbnb.android:lottie", version.ref = "lottieAnimation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
