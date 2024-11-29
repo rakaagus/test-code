@@ -1,4 +1,6 @@
 package com.artforyou.testcodesoulparking.view.add_detail
 
-class AddAndDetailViewModel {
+import androidx.lifecycle.ViewModel
+
+class AddAndDetailViewModel : ViewModel(){
 }

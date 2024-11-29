@@ -1,4 +1,6 @@
 package com.artforyou.testcodesoulparking.view.home
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel: ViewModel() {
 }

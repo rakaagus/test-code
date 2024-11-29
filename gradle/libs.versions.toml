@@ -8,6 +8,7 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
+lifecycleKtx = "2.8.6"
 constraintlayout = "2.2.0"
 kpsVersion = "1.9.10-1.0.13"
 hiltAndroid = "2.49"
@@ -35,6 +36,10 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 
 # Lotte
 lottie-animation = { module = "com.airbnb.android:lottie", version.ref = "lottieAnimation" }
+
+# View Model & Live Data
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

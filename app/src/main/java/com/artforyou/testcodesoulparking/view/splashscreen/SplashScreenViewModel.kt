@@ -1,4 +1,6 @@
 package com.artforyou.testcodesoulparking.view.splashscreen
 
-class SplashScreenViewModel {
+import androidx.lifecycle.ViewModel
+
+class SplashScreenViewModel: ViewModel() {
 }
