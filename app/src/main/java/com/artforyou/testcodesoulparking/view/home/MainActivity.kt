@@ -1,4 +1,4 @@
-package com.artforyou.testcodesoulparking.view
+package com.artforyou.testcodesoulparking.view.home
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
