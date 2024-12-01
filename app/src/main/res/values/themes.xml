@@ -3,6 +3,58 @@
     <style name="Base.Theme.TestCodeSoulParking" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/purple</item>
+        <item name="colorSecondaryVariant">@color/purple_main</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+    </style>
+
+
+    <style name="FabColor">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="HeadlineMedium">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.HeadlineMedium</item>
+    </style>
+
+    <style name="HeadlineMedium.Bold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_main</item>
+    </style>
+
+    <style name="TitleMedium">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black_main</item>
+    </style>
+
+    <style name="BodyMedium">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black_main</item>
+    </style>
+
+    <style name="BodyMedium.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="BodyMedium.Gray">
+        <item name="android:textColor">@color/colorSubtitle</item>
+    </style>
+
+    <style name="TitleMedium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BodyMedium.Bold">
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Theme.TestCodeSoulParking" parent="Base.Theme.TestCodeSoulParking" />
