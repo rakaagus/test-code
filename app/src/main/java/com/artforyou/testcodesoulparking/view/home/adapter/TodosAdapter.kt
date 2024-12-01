@@ -19,8 +19,11 @@ class TodosAdapter: ListAdapter<Todos, TodosAdapter.ViewHolder>(DIFF_CALLBACK) {
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: TodosAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val dataTodos = getItem(position)
+        holder.binding.tvTitleTodo.text = dataTodos.title
+        holder.binding.tvPriority.text = dataTodos.priority.name
+        holder.binding.tvDateTodo.text = dataTodos.date
     }
 
     companion object{

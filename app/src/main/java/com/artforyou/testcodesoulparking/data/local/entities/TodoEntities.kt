@@ -3,6 +3,7 @@ package com.artforyou.testcodesoulparking.data.local.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.artforyou.testcodesoulparking.utils.PriorityTodo
+import kotlinx.coroutines.flow.Flow
 
 @Entity(tableName = "todos_table")
 data class TodoEntities(
