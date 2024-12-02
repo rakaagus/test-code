@@ -1,11 +1,13 @@
 package com.artforyou.testcodesoulparking.data.local.entities
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.artforyou.testcodesoulparking.utils.PriorityTodo
-import kotlinx.coroutines.flow.Flow
+import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "todos_table")
+@Parcelize
 data class TodoEntities(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
@@ -19,4 +21,4 @@ data class TodoEntities(
     val isTrash: Boolean,
 
     val priority: PriorityTodo
-)
+): Parcelable

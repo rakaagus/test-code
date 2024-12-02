@@ -3,8 +3,155 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.add_detail.AddAndDetailActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputTitle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitleTodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputDescription"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Deskripsi"
+        app:layout_constraintTop_toBottomOf="@id/inputTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/liear_date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:minHeight="150dp"
+            android:textAlignment="textStart"
+            android:importantForAccessibility="yes"
+            android:scrollbars="vertical"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Date Picker Button -->
+    <LinearLayout
+        android:id="@+id/liear_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="@drawable/btn_date_background"
+        android:paddingVertical="15dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Icon Date"
+            android:src="@drawable/baseline_today_24_white"
+            />
+
+        <TextView
+            android:id="@+id/tv_date_todo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TitleMedium.Bold"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:text="Bulan Tahun"/>
+        
+    </LinearLayout>
+
+    <!-- Radio Buttons Group for Priority -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/radioGroupPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/liear_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_submit"
+        android:layout_marginTop="16dp">
+
+        <android.widget.RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.widget.RadioButton
+                android:id="@+id/rbHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Priority" />
+
+            <android.widget.RadioButton
+                android:id="@+id/rbMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Priority" />
+
+            <android.widget.RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low Priority" />
+        </android.widget.RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btn_submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="@drawable/selector_btn_active_no_active"
+        android:paddingVertical="15dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:enabled="false"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupPriority"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/tv_btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TitleMedium.Bold"
+            android:textColor="@color/black_main"
+            android:layout_marginLeft="10dp"
+            android:text="Simpan"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

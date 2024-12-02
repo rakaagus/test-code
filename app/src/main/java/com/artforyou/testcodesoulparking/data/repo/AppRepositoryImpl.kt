@@ -1,8 +1,8 @@
 package com.artforyou.testcodesoulparking.data.repo
 
+import androidx.lifecycle.LiveData
 import com.artforyou.testcodesoulparking.data.local.dao.TodoDao
 import com.artforyou.testcodesoulparking.data.local.entities.TodoEntities
-import com.artforyou.testcodesoulparking.domain.repo.AllActiveTodos
 import com.artforyou.testcodesoulparking.domain.repo.AppRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -10,7 +10,7 @@ import javax.inject.Inject
 class AppRepositoryImpl @Inject constructor(
     private val todosDao: TodoDao
 ) : AppRepository{
-    override fun getAllTodosActive(): Flow<AllActiveTodos> {
+    override fun getAllTodosActive(): LiveData<List<TodoEntities>> {
         return todosDao.getAllTodos()
     }
 
@@ -22,7 +22,7 @@ class AppRepositoryImpl @Inject constructor(
         todosDao.deleteTodo(todo)
     }
 
-    override suspend fun getTodoById(id: Int): TodoEntities {
-        return todosDao.getTodoById(id)
+    override suspend fun updateTodos(todo: TodoEntities) {
+        todosDao.updateTodo(todo)
     }
 }

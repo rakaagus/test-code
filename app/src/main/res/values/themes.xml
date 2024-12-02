@@ -57,5 +57,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="shapeAppreaceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="Theme.TestCodeSoulParking" parent="Base.Theme.TestCodeSoulParking" />
 </resources>
