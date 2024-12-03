@@ -128,8 +128,12 @@ open class SimpleSwipeTouch(
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         val position = viewHolder.adapterPosition
-        val item = adapter.currentList[position] // Ambil item dari currentList
+        val item = adapter.currentList[position]
         swipedItem = adapter.currentList[position]
+
+        val newList = adapter.currentList.toMutableList()
+        newList.removeAt(position)
+        adapter.submitList(newList)
 
 
         val builder = AlertDialog.Builder(context)
@@ -158,6 +162,5 @@ open class SimpleSwipeTouch(
         }
         builder.show()
     }
-
 }
 

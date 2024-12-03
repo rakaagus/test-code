@@ -16,7 +16,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:hint="title"
+        android:hint="@string/etTodoTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -37,7 +37,7 @@
         android:minHeight="200dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="20dp"
-        android:hint="Deskripsi"
+        android:hint="@string/etTodoDeskripsi"
         app:layout_constraintTop_toBottomOf="@id/inputTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +50,7 @@
             android:ems="10"
             android:minHeight="150dp"
             android:textAlignment="textStart"
+            android:gravity="start|top"
             android:importantForAccessibility="yes"
             android:scrollbars="vertical"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -84,7 +85,7 @@
             style="@style/TitleMedium.Bold"
             android:textColor="@color/white"
             android:layout_marginLeft="10dp"
-            android:text="Bulan Tahun"/>
+            android:text="@string/formatDate"/>
         
     </LinearLayout>
 
@@ -109,21 +110,21 @@
                 android:id="@+id/rbHigh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HIGH"
+                android:text="@string/radioHigh"
                 android:tag="HIGH"/>
 
             <android.widget.RadioButton
                 android:id="@+id/rbMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MEDIUM"
+                android:text="@string/radioMedium"
                 android:tag="MEDIUM"/>
 
             <android.widget.RadioButton
                 android:id="@+id/rbLow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LOW"
+                android:text="@string/radioLOW"
                 android:tag="LOW"/>
         </android.widget.RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -153,7 +154,7 @@
             style="@style/TitleMedium.Bold"
             android:textColor="@color/black_main"
             android:layout_marginLeft="10dp"
-            android:text="Simpan"/>
+            android:text="@string/simpan"/>
 
     </LinearLayout>
 

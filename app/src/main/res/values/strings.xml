@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">TestCodeSoulParking</string>
+    <string name="app_name">Todo Apps</string>
+
+    <string name="etTodoTitle">title</string>
+    <string name="etTodoDeskripsi">Deskripsi</string>
+    <string name="formatDate">Bulan Tahun</string>
+    <string name="simpan">Simpan Todo</string>
+    <string name="edit">Update Todo</string>
+    <string name="radioHigh">HIGH</string>
+    <string name="radioMedium">MEDIUM</string>
+    <string name="radioLOW">LOW</string>
+
+    <!--contentDescription-->
+    <string name="IconDate">Icon Date</string>
+    <string name="AddTodos">Tambah Todo</string>
 </resources>

@@ -54,7 +54,7 @@
         android:padding="16dp"
         style="@style/shapeAppreaceOverlay.App.CornerSize10Percent"
         android:backgroundTint="@color/purple_main"
-        android:contentDescription="Add Todos"
+        android:contentDescription="@string/AddTodos"
         app:srcCompat="@drawable/baseline_add_24"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"

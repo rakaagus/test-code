@@ -66,7 +66,7 @@ class AddAndDetailActivity : AppCompatActivity() {
             }, year, month, day)
 
             datePickerDialog.setOnCancelListener {
-                binding.tvDateTodo.text = "Bulan Tahun"
+                binding.tvDateTodo.text = ContextCompat.getString(this, R.string.formatDate)
             }
 
             datePickerDialog.show()
@@ -75,7 +75,7 @@ class AddAndDetailActivity : AppCompatActivity() {
         typeData = intent.getStringExtra(KEY_ID_ADD_OR_UPDATE) ?: ""
         todo = intent.getParcelableExtra(KEY_EXTRA_PARCEL)
         if(typeData == "Add"){
-            binding.tvBtnSubmit.text = "Simpan Todo"
+            binding.tvBtnSubmit.text = ContextCompat.getString(this, R.string.simpan)
 
             binding.btnSubmit.setOnClickListener {
                 if(getPriorityFromRadio() != null){
@@ -99,7 +99,7 @@ class AddAndDetailActivity : AppCompatActivity() {
                 }
             }
         }else if (typeData == "Update" && todo != null){
-            binding.tvBtnSubmit.text = "Update Todo"
+            binding.tvBtnSubmit.text = ContextCompat.getString(this, R.string.edit)
 
             binding.etTitleTodo.setText(todo?.title)
             binding.etDescription.setText(todo?.description)
@@ -190,7 +190,7 @@ class AddAndDetailActivity : AppCompatActivity() {
     }
 
     private fun isDateFilled(): Boolean {
-        return binding.tvDateTodo.text.toString() != "Bulan Tahun"
+        return binding.tvDateTodo.text.toString() != ContextCompat.getString(this, R.string.formatDate)
     }
 
     private fun getPriorityFromRadio(): PriorityTodo? {
