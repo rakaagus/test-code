@@ -10,15 +10,15 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class TodoEntities(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
 
-    val title: String,
+    var title: String,
 
-    val description: String = "",
+    var description: String = "",
 
-    val date: String,
+    var date: String,
 
-    val isTrash: Boolean,
+    var isTrash: Boolean,
 
-    val priority: PriorityTodo
+    var priority: PriorityTodo
 ): Parcelable

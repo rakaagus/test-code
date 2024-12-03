@@ -8,18 +8,19 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.artforyou.testcodesoulparking.R
+import com.artforyou.testcodesoulparking.data.local.entities.TodoEntities
 import com.artforyou.testcodesoulparking.databinding.ItemTodosListBinding
 import com.artforyou.testcodesoulparking.domain.model.Todos
 import com.artforyou.testcodesoulparking.utils.PriorityTodo
 import com.artforyou.testcodesoulparking.view.add_detail.AddAndDetailActivity
 
-class TodosAdapter: ListAdapter<Todos, TodosAdapter.ViewHolder>(DIFF_CALLBACK) {
+class TodosAdapter: ListAdapter<TodoEntities, TodosAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     class ViewHolder(val binding: ItemTodosListBinding): RecyclerView.ViewHolder(binding.root){
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodosAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemTodosListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
@@ -38,7 +39,7 @@ class TodosAdapter: ListAdapter<Todos, TodosAdapter.ViewHolder>(DIFF_CALLBACK) {
             PriorityTodo.LOW -> ContextCompat.getColor(context, R.color.orange_tone)
         }
 
-        holder.binding.itemRoot.setCardBackgroundColor(priorityColor)
+        holder.binding.viewPriority.setBackgroundColor(priorityColor)
 
         holder.binding.itemRoot.setOnClickListener {
             val intent = Intent(it.context, AddAndDetailActivity::class.java)
@@ -48,13 +49,14 @@ class TodosAdapter: ListAdapter<Todos, TodosAdapter.ViewHolder>(DIFF_CALLBACK) {
         }
     }
 
+
     companion object{
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Todos>(){
-            override fun areItemsTheSame(oldItem: Todos, newItem: Todos): Boolean {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<TodoEntities>(){
+            override fun areItemsTheSame(oldItem: TodoEntities, newItem: TodoEntities): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: Todos, newItem: Todos): Boolean {
+            override fun areContentsTheSame(oldItem: TodoEntities, newItem: TodoEntities): Boolean {
                 return oldItem == newItem
             }
         }

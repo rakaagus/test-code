@@ -109,19 +109,22 @@
                 android:id="@+id/rbHigh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="High Priority" />
+                android:text="HIGH"
+                android:tag="HIGH"/>
 
             <android.widget.RadioButton
                 android:id="@+id/rbMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Priority" />
+                android:text="MEDIUM"
+                android:tag="MEDIUM"/>
 
             <android.widget.RadioButton
                 android:id="@+id/rbLow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Low Priority" />
+                android:text="LOW"
+                android:tag="LOW"/>
         </android.widget.RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

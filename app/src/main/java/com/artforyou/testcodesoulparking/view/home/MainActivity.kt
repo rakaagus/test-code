@@ -10,10 +10,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.artforyou.testcodesoulparking.R
 import com.artforyou.testcodesoulparking.databinding.ActivityMainBinding
 import com.artforyou.testcodesoulparking.domain.model.Todos
+import com.artforyou.testcodesoulparking.utils.AnimateFadeIn
+import com.artforyou.testcodesoulparking.utils.SimpleSwipeTouch
+import com.artforyou.testcodesoulparking.utils.TodoSwipeHelper
 import com.artforyou.testcodesoulparking.view.add_detail.AddAndDetailActivity
 import com.artforyou.testcodesoulparking.view.home.adapter.TodosAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.animationView.visibility = View.VISIBLE
 
         viewModel.isLoading.observe(this){
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
@@ -40,30 +44,26 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.rvListTodo.layoutManager = layoutManager
 
+        val adapter = TodosAdapter()
+        binding.rvListTodo.adapter = adapter
+        binding.rvListTodo.itemAnimator = AnimateFadeIn()
+
+        val swipeHelper = SimpleSwipeTouch(adapter, viewModel, this)
+        val itemTouchHelper = ItemTouchHelper(swipeHelper)
+        itemTouchHelper.attachToRecyclerView(binding.rvListTodo)
+
         viewModel.getAllTodos().observe(this){
-
             if (it.isEmpty()) {
-                binding.rvListTodo.visibility = View.GONE  // Sembunyikan RecyclerView
-                binding.animationView.visibility = View.VISIBLE // Tampilkan animasi
+                binding.rvListTodo.visibility = View.GONE
+                binding.animationView.visibility = View.VISIBLE
             } else {
-                binding.rvListTodo.visibility = View.VISIBLE // Tampilkan RecyclerView
-                binding.animationView.visibility = View.GONE // Sembunyikan animasi
+                binding.rvListTodo.visibility = View.VISIBLE
+                binding.animationView.visibility = View.GONE
+                adapter.submitList(it)
             }
-
-            val adapter = TodosAdapter()
-            val data = it.map { todo->
-                Todos(
-                    id = todo.id,
-                    title = todo.title,
-                    description = todo.description,
-                    date = todo.date,
-                    isTrash = todo.isTrash,
-                    priority = todo.priority
-                )
-            }
-            adapter.submitList(data)
-            binding.rvListTodo.adapter = adapter
         }
+
+
 
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this, AddAndDetailActivity::class.java)
